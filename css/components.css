@@ -1,0 +1,851 @@
+/* ==========================================================================
+   まもうなのLCD再現ギャラリー 各種コンポーネント (components.css)
+   駅種別幕フィルタ、作品カード、スペックパネル、ライトボックス、駅名標
+   ========================================================================== */
+
+/* ==========================================================================
+   ギャラリーツールバー & 駅種別幕フィルタ
+   ========================================================================== */
+
+.gallery-toolbar {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-metal-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(20, 24, 30, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toolbar-primary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-box-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 480px;
+}
+
+.search-input {
+  width: 100%;
+  height: 42px;
+  background-color: #FFFFFF;
+  border: 2px solid #CFD8DC;
+  border-radius: 6px;
+  padding: 0 14px 0 40px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-odakyu-navy);
+  box-shadow: 0 0 0 3px rgba(26, 58, 138, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #78909C;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.sort-and-count {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sort-select {
+  height: 42px;
+  padding: 0 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #CFD8DC;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--color-odakyu-navy);
+}
+
+.items-counter {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: #E4DFD5;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.items-counter span {
+  color: var(--color-odakyu-navy);
+  font-size: 1.1rem;
+  margin-right: 2px;
+}
+
+/* 駅の種別幕風フィルタセクション */
+.filter-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px dashed #D0C9BA;
+  padding-top: 14px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #5D6D7E;
+  min-width: 54px;
+  letter-spacing: 0.05em;
+  background: #E8E3D8;
+  padding: 3px 6px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* 駅種別幕チップスタイル */
+.rollsign-chip {
+  padding: 5px 12px;
+  background-color: #ECE7DC;
+  border: 1.5px solid #C8C0AF;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #37474F;
+  letter-spacing: 0.04em;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rollsign-chip:hover {
+  background-color: #DFD8CA;
+  border-color: #AFA590;
+  color: #111;
+}
+
+/* アクティブ状態（種別幕点灯） */
+.rollsign-chip.active {
+  background-color: var(--color-bezel);
+  color: #FFFFFF;
+  border-color: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* 種別ごとのアクセント帯 */
+.rollsign-chip.active[data-line="JR"] {
+  border-left: 5px solid #008000;
+}
+.rollsign-chip.active[data-line="小田急"] {
+  border-left: 5px solid var(--color-odakyu-navy);
+}
+.rollsign-chip.active[data-line="東急"] {
+  border-left: 5px solid #DA0442;
+}
+.rollsign-chip.active[data-line="相鉄"] {
+  border-left: 5px solid var(--color-clover);
+}
+.rollsign-chip.active[data-line="メトロ"] {
+  border-left: 5px solid #9B7CB6;
+}
+.rollsign-chip.active[data-type="video"] {
+  border-left: 5px solid var(--color-odakyu-orange);
+}
+.rollsign-chip.active[data-type="article"] {
+  border-left: 5px solid #0E58A8;
+}
+.rollsign-chip.active[data-type="book"] {
+  border-left: 5px solid #E65520;
+}
+
+/* ==========================================================================
+   作品グリッド & カード
+   ========================================================================== */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1040px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* 作品カード */
+.work-card {
+  background: var(--color-bezel);
+  border: 1px solid #2B3442;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: #3F4D61;
+}
+
+/* カード内 LCDスクリーンコンテナ */
+.card-screen-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-lcd-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.card-screen-wrap img,
+.card-screen-wrap svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .card-screen-wrap img,
+.work-card:hover .card-screen-wrap svg {
+  transform: scale(1.02);
+}
+
+/* ホバー時に現れるオレンジ帯＆一言解説テロップ */
+.card-hover-telop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(230, 85, 32, 0.95) 0%, rgba(180, 50, 10, 0.98) 100%);
+  color: #FFFFFF;
+  padding: 10px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+  transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.card-hover-telop-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #FFDFBA;
+  text-transform: uppercase;
+}
+
+.work-card:hover .card-hover-telop {
+  transform: translateY(0);
+}
+
+/* カード情報フッター */
+.card-info {
+  padding: 12px 6px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #E8F4FF;
+  line-height: 1.35;
+}
+
+.card-badge {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+.badge-still {
+  background-color: #1F3A52;
+  color: #7AB8ED;
+  border: 1px solid #31587D;
+}
+.badge-video {
+  background-color: #4A1A1A;
+  color: #FFA5A5;
+  border: 1px solid #7A2E2E;
+}
+.badge-article {
+  background-color: #123824;
+  color: #8AE0B0;
+  border: 1px solid #205E3C;
+}
+.badge-book {
+  background-color: #422915;
+  color: #FFC08A;
+  border: 1px solid #704423;
+}
+
+.card-sub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #7E92A8;
+}
+
+.card-lines {
+  display: flex;
+  gap: 4px;
+}
+
+.card-line-pill {
+  background: #1B232D;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  color: #A7B8CA;
+}
+
+.card-maker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #8DA1B5;
+}
+
+/* ==========================================================================
+   作品詳細ページ (works/[slug].html) レイアウト
+   ========================================================================== */
+
+.work-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detail-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-metal-border);
+}
+
+.back-to-gallery-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-odakyu-navy);
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #E8E2D5;
+  transition: all 0.15s ease;
+}
+
+.back-to-gallery-link:hover {
+  background: var(--color-odakyu-navy);
+  color: #FFFFFF;
+}
+
+.detail-columns {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .detail-columns {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ビューアセクション（左側） */
+.viewer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-lcd-display {
+  cursor: zoom-in;
+  position: relative;
+}
+
+.zoom-hint {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(10, 15, 22, 0.8);
+  color: #E8F4FF;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.thumbnail-card {
+  width: 110px;
+  aspect-ratio: 16 / 9;
+  background: #0B0E13;
+  border: 2px solid #293545;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.65;
+  transition: all 0.15s ease;
+}
+
+.thumbnail-card.active,
+.thumbnail-card:hover {
+  opacity: 1;
+  border-color: var(--color-amber);
+}
+
+.viewer-seal-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #FAF7F1;
+  border: 1px solid var(--color-metal-border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--color-text-sub);
+}
+
+.ppt-guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #D83B01;
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.76rem;
+}
+
+/* スペックパネル（右側：車内路線図・銘板風） */
+.spec-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spec-board {
+  background: var(--color-panel);
+  border: 2px solid var(--color-metal-border);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(20, 24, 30, 0.05);
+}
+
+.spec-board-header {
+  border-bottom: 2px solid var(--color-odakyu-navy);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.spec-train-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.spec-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  margin-top: 4px;
+}
+
+/* スペック表 */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #E0D9CC;
+  text-align: left;
+}
+
+.spec-table th {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #475569;
+  width: 38%;
+  background: #F2ECE0;
+}
+
+.spec-table td {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.spec-table td.mono {
+  font-family: var(--font-mono);
+}
+
+/* 解説文セクション */
+.spec-commentary {
+  background: #FFFFFF;
+  border: 1px solid #D9D2C3;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.commentary-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--color-odakyu-orange);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.commentary-text {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #2D3748;
+}
+
+/* 外部リンクボタングループ */
+.external-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ext-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.ext-link-btn.btn-article {
+  background-color: #EBF3FB;
+  color: var(--color-odakyu-navy);
+  border-color: #B9D5F2;
+}
+.ext-link-btn.btn-article:hover {
+  background-color: var(--color-odakyu-navy);
+  color: #FFFFFF;
+}
+
+.ext-link-btn.btn-x {
+  background-color: #11151A;
+  color: #FFFFFF;
+}
+.ext-link-btn.btn-x:hover {
+  background-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ext-link-btn.btn-youtube {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+.ext-link-btn.btn-youtube:hover {
+  background-color: #D60000;
+}
+
+/* 関連作品セクション */
+.related-works-section {
+  border-top: 2px solid var(--color-metal-border);
+  padding-top: 32px;
+  margin-top: 16px;
+}
+
+.section-heading-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-heading-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.section-heading-bar::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-metal-border);
+}
+
+/* ==========================================================================
+   全画面ライトボックス
+   ========================================================================== */
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(3, 7, 12, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-header {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #E8F4FF;
+  z-index: 2010;
+}
+
+.lightbox-title-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.lightbox-close-btn {
+  background: #1C2735;
+  color: #FFFFFF;
+  border: 1px solid #35495F;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: var(--color-odakyu-orange);
+  border-color: var(--color-odakyu-orange);
+}
+
+.lightbox-content-box {
+  width: 90vw;
+  max-width: 1400px;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 28, 38, 0.8);
+  color: #FFFFFF;
+  border: 1px solid #35495F;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.15s ease;
+  z-index: 2010;
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--color-odakyu-navy);
+  border-color: #5587DF;
+  box-shadow: 0 0 16px rgba(85, 135, 223, 0.6);
+}
+
+.lightbox-nav-btn.prev { left: -70px; }
+.lightbox-nav-btn.next { right: -70px; }
+
+@media (max-width: 768px) {
+  .lightbox-nav-btn.prev { left: 10px; }
+  .lightbox-nav-btn.next { right: 10px; }
+}
+
+.lightbox-image-target {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 4px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+  border: 2px solid #233549;
+}
+
+.lightbox-instructions {
+  position: absolute;
+  bottom: 20px;
+  color: #728A9E;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   駅名標風リンクパネル (links.html) & その他
+   ========================================================================== */
+
+.station-sign-link {
+  background: #FFFFFF;
+  border: 3px solid #1E293B;
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.station-sign-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  bottom: 0;
+  background-color: var(--color-odakyu-navy);
+}
+
+.station-sign-link:hover {
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.station-sign-body {
+  padding-left: 10px;
+}
+
+.station-sign-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.station-sign-sub {
+  font-size: 0.82rem;
+  color: #64748B;
+  font-family: var(--font-mono);
+}
+
+.station-sign-arrow {
+  font-size: 1.4rem;
+  color: #94A3B8;
+  font-weight: bold;
+}

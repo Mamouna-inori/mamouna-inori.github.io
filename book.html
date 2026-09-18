@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>同人誌『PowerPointではじめる車内LCD再現』 | まもうなのLCD再現ギャラリー</title>
+  <meta name="description" content="同人誌『PowerPointではじめる車内LCD再現』特設ページ。C106 / C108頒布。B5フルカラー、パワポだけで作る本物の車内案内表示器の教科書。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lcd.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- 固定ヘッダー -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+          <span class="logo-badge">LCD VIS</span>
+          <span>まもうなのLCD再現ギャラリー</span>
+          <span class="logo-title-en">Mamouna LCD Gallery</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">GALLERY</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="book.html" class="active">BOOK</a></li>
+          <li><a href="links.html">LINKS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 路線図ステータスバー (現在地: BOOK) -->
+    <div class="line-status-bar">
+      <div class="line-status-inner">
+        <div class="line-track"></div>
+        <div class="station-nodes">
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M01</span>
+            <span>GALLERY / 図録</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M02</span>
+            <span>ABOUT / まもうな</span>
+          </div>
+          <div class="station-node current">
+            <span class="station-lamp"></span>
+            <span class="station-code">M03</span>
+            <span>BOOK / 教科書</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M04</span>
+            <span>LINKS / 連絡先</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="work-detail-container">
+      <!-- ナビゲーションバー -->
+      <div class="detail-nav-bar">
+        <div>
+          <h1 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--color-text);">
+            TECHNICAL BOOK
+          </h1>
+          <p style="font-size: 0.9rem; color: var(--color-text-sub);">技術同人誌・既刊情報</p>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-sub);">
+          COMMISSION: C106 / C108
+        </div>
+      </div>
+
+      <div class="detail-columns">
+        <!-- 左側: 書影プレースホルダー -->
+        <div class="viewer-column">
+          <div class="lcd-bezel" style="padding: 16px;">
+            <!-- 書影SVGプレースホルダー -->
+            <div style="width: 100%; aspect-ratio: 1 / 1.414; background: linear-gradient(135deg, #07111C 0%, #15273C 100%); border-radius: 4px; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); display: flex; flex-direction: column; justify-content: space-between; padding: 28px 24px; position: relative; overflow: hidden; border: 1px solid #2F4259;">
+              <!-- 表紙上部帯 -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #FFC14A; padding-bottom: 8px;">
+                  <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #FFC14A; font-weight: bold;">MAMOUNA TECHNICAL BOOK VOL.1</span>
+                  <span style="background: #E65520; color: #FFF; font-size: 0.7rem; font-weight: bold; padding: 2px 6px; border-radius: 2px;">C106 / C108</span>
+                </div>
+                <div style="margin-top: 24px;">
+                  <span style="font-family: var(--font-mono); font-size: 0.9rem; color: #7CA1C4; letter-spacing: 2px;">POWERPOINT RECREATION GUIDE</span>
+                  <h2 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 900; color: #E8F4FF; line-height: 1.25; margin-top: 6px;">
+                    PowerPointではじめる<br><span style="color: #FFC14A;">車内LCD再現</span>
+                  </h2>
+                  <p style="font-size: 0.82rem; color: #A7C5E0; margin-top: 6px;">本物のトレインビジョンをスライド上に構築する技術教本</p>
+                </div>
+              </div>
+
+              <!-- 表紙中央のLCDグラフィックモック -->
+              <div style="background: #040910; border: 2px solid #1C334D; border-radius: 6px; padding: 12px; margin: 16px 0;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1A2F45; padding-bottom: 4px; font-size: 0.72rem; color: #FFC14A; font-weight: bold;">
+                  <span>各駅停車</span>
+                  <span>号車 4</span>
+                </div>
+                <div style="padding: 14px 0; text-align: center;">
+                  <div style="font-size: 0.72rem; color: #7B9AB5;">次は / Next</div>
+                  <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: #FFFFFF; letter-spacing: 2px;">教　科　書</div>
+                </div>
+                <div style="height: 6px; background: #E65520; border-radius: 3px;"></div>
+              </div>
+
+              <!-- 表紙下部 -->
+              <div style="border-top: 1px solid #1E344C; padding-top: 12px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                  <div style="font-size: 0.75rem; color: #8FB2D1;">まもうな工房 著</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #5D7994;">B5 / FULL COLOR / TECHNICAL GUIDE</div>
+                </div>
+                <div style="background: #D83B01; color: #FFF; font-family: var(--font-mono); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 3px;">
+                  PPT ONLY
+                </div>
+              </div>
+            </div>
+            <div class="lcd-bezel-footer" style="margin-top: 12px;">
+              <div class="lcd-pilot-lamp">
+                <span class="lamp-dot"></span>
+                <span>BOOK SPEC: B5 FULL COLOR</span>
+              </div>
+              <div class="lcd-plate">TECHNICAL MANUAL</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側: 書籍仕様 & 目次 & 入手方法 -->
+        <div class="spec-column">
+          <div class="spec-board">
+            <div class="spec-board-header">
+              <h2 class="spec-train-title">PowerPointではじめる車内LCD再現</h2>
+              <div class="spec-subtitle">コミックマーケット C106 / C108 頒布作品</div>
+            </div>
+
+            <!-- 書籍スペック -->
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <th>書名</th>
+                  <td>PowerPointではじめる車内LCD再現</td>
+                </tr>
+                <tr>
+                  <th>判型 / 頁数</th>
+                  <td class="mono">B5判 / フルカラー</td>
+                </tr>
+                <tr>
+                  <th>頒布イベント</th>
+                  <td>コミックマーケット C106 / C108</td>
+                </tr>
+                <tr>
+                  <th>サークル名</th>
+                  <td>まもうな工房</td>
+                </tr>
+                <tr>
+                  <th>対象ソフト</th>
+                  <td class="mono">Microsoft PowerPoint 2019 / 2021 / 365</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 本書の概要 -->
+            <div class="spec-commentary">
+              <div class="commentary-label">Book Overview / 概要</div>
+              <p class="commentary-text">
+                車内LCD再現をこれから始めたい人、そしてパワポの表現力を極限まで高めたい人のための技術指南書。高価なAdobeソフトがなくても、学生から社会人まで誰でも身近にあるPowerPointの標準機能だけで、本物と見紛うばかりのLCD画面と滑らかなアニメーションを構築するためのノウハウを余すところなく収録しています。
+              </p>
+            </div>
+
+            <!-- 主な目次抜粋 -->
+            <div class="spec-commentary">
+              <div class="commentary-label">Table of Contents / 主な目次</div>
+              <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8; color: #2D3748; padding-left: 0;">
+                <li><strong>第1章: 環境設定編</strong> - キャンバス比率の黄金比（16:9と5:3）とグリッドスナップ</li>
+                <li><strong>第2章: フォント選定の泥沼</strong> - UD新ゴ・新ゴ・ヒラギノの使い分けと混在の美学</li>
+                <li><strong>第3章: 図形結合の奥義</strong> - 頂点の編集だけで描く立体駅構内図とピクトグラム</li>
+                <li><strong>第4章: アニメーション同期論</strong> - 放送チャイムと画面切り替えの「実車のズレ」の作り方</li>
+                <li><strong>第5章: 実車取材と採寸</strong> - スマホ撮影の角度補正と配色カラーコードの割り出し方</li>
+              </ul>
+            </div>
+
+            <!-- 委託・リンク案内 -->
+            <div class="external-links-group" style="margin-top: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--color-text-sub); margin-bottom: 4px;">
+                購入・委託案内
+              </div>
+              <a href="https://freedomtrain.jp/" target="_blank" rel="noopener noreferrer" class="ext-link-btn btn-article">
+                <span>Freedom Train 関連情報</span>
+                <span>↗</span>
+              </a>
+              <div style="background: #F4EFE6; border: 1px solid #D8D1C2; border-radius: 6px; padding: 12px 16px; font-size: 0.88rem; color: #555;">
+                <strong>書店委託について:</strong><br>
+                メロンブックス等での書店委託および電子版配信は、次期イベント頒布に合わせて順次案内予定です。最新情報は公式X (@Mamouna_inori) をご確認ください。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-announcement">
+          <span class="footer-chime-icon">♪</span>
+          <span>まもなく、終点です。お忘れ物のないようご注意ください。</span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">GALLERY</a>
+          <a href="about.html">ABOUT</a>
+          <a href="book.html">BOOK</a>
+          <a href="links.html">LINKS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © まもうな (@Mamouna_inori) / Mamouna LCD Gallery
+        </div>
+        <div class="footer-sysinfo">
+          ALL LCD GRAPHICS REPRODUCED WITH MICROSOFT POWERPOINT
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

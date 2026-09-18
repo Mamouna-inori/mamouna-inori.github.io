@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京メトロ13000系 3画面ワイドLCD | まもうなのLCD再現ギャラリー</title>
+  <meta name="description" content="扉上に並ぶ圧巻の3画面LCD。日比谷線独特の洗練されたシルバー基調グラフィック。">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/lcd.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-slug="tokyo-metro-13000">
+
+  <!-- 固定ヘッダー -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <a href="../index.html" style="display:flex; align-items:center; gap:10px;">
+          <span class="logo-badge">LCD VIS</span>
+          <span>まもうなのLCD再現ギャラリー</span>
+          <span class="logo-title-en">Mamouna LCD Gallery</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html" class="active">GALLERY</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+          <li><a href="../book.html">BOOK</a></li>
+          <li><a href="../links.html">LINKS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 路線図ステータスバー (現在地: GALLERY) -->
+    <div class="line-status-bar">
+      <div class="line-status-inner">
+        <div class="line-track"></div>
+        <div class="station-nodes">
+          <div class="station-node current">
+            <span class="station-lamp"></span>
+            <span class="station-code">M01</span>
+            <span>GALLERY / 図録</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M02</span>
+            <span>ABOUT / まもうな</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M03</span>
+            <span>BOOK / 教科書</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M04</span>
+            <span>LINKS / 連絡先</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="work-detail-container">
+      <!-- ナビゲーションバー -->
+      <div class="detail-nav-bar">
+        <a href="../index.html" class="back-to-gallery-link">
+          <span>←</span> <span>ギャラリー一覧へ戻る</span>
+        </a>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-sub);">
+          ITEM NO: TOKYO-METRO-13000
+        </div>
+      </div>
+
+      <!-- 2カラムコンテンツ -->
+      <div class="detail-columns">
+        <!-- 左カラム: 大画面LCDビューア -->
+        <div class="viewer-column">
+          <div class="lcd-bezel main-lcd-display" id="mainLcdDisplay" title="クリックで全画面拡大">
+            <div class="zoom-hint">🔍 クリックで全画面拡大（Escで閉じる）</div>
+            <div class="lcd-screen-container" id="mainLcdScreen">
+              <!-- JSで高精細LCDベクターがレンダリングされます -->
+            </div>
+            <div class="lcd-bezel-footer">
+              <div class="lcd-pilot-lamp">
+                <span class="lamp-dot"></span>
+                <span>STATUS: TIMS ONLINE / ACTIVE</span>
+              </div>
+              <div class="lcd-plate">17インチ 16:9 × 3画面</div>
+            </div>
+          </div>
+
+          <div class="viewer-seal-bar">
+            <span>描画解像度: ベクターネイティブ</span>
+            <span class="ppt-guarantee-badge">★ PowerPointで再現</span>
+          </div>
+        </div>
+
+        <!-- 右カラム: スペックパネル（車内路線図・銘板風） -->
+        <div class="spec-column">
+          <div class="spec-board">
+            <div class="spec-board-header">
+              <h1 class="spec-train-title">東京メトロ13000系 3画面ワイドLCD</h1>
+              <div class="spec-subtitle">日比谷線・東武スカイツリーライン直通</div>
+            </div>
+
+            <!-- 本人記事に準拠した項目スペック表 -->
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <th>導入事業者</th>
+                  <td>東京メトロ</td>
+                </tr>
+                <tr>
+                  <th>車両形式</th>
+                  <td>13000系</td>
+                </tr>
+                <tr>
+                  <th>導入路線</th>
+                  <td>メトロ, 東武</td>
+                </tr>
+                <tr>
+                  <th>画面サイズ・比率</th>
+                  <td class="mono">17インチ 16:9 × 3画面</td>
+                </tr>
+                <tr>
+                  <th>表示制作メーカー</th>
+                  <td>三菱（3画面トレインビジョン）</td>
+                </tr>
+                <tr>
+                  <th>アニメーション</th>
+                  <td>あり（3画面シームレス連携）</td>
+                </tr>
+                <tr>
+                  <th>制作ソフトウェア</th>
+                  <td class="mono"><strong>Microsoft PowerPoint</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 本人のこだわり解説文 -->
+            <div class="spec-commentary">
+              <div class="commentary-label">Recreation Notes / 解説</div>
+              <p class="commentary-text">ドア上に贅沢に3面並んだ東京メトロ日比谷線13000系の案内装置。右側の走行位置・乗換案内、中央の運行情報・号車詳細、左側の広告用画面が美しく連動するレイアウトを再現。メトロ独特の視認性の高いピクトグラムや細身のフォントチョイス、グラデーションの質感まで忠実にパワポ化しています。</p>
+            </div>
+
+            <!-- 外部リンクボタン -->
+            <div class="external-links-group">
+              <a href="https://freedomtrain.jp/" target="_blank" rel="noopener noreferrer" class="ext-link-btn btn-article"><span>Freedom Train 解説記事を読む</span><span>↗</span></a>
+<a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" class="ext-link-btn btn-x"><span>X (Twitter) で投稿を見る</span><span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 関連作品 -->
+      <section class="related-works-section">
+        <div class="section-heading-bar">
+          <h2 class="section-heading-title">関連作品（同系路線・メーカー）</h2>
+        </div>
+        <div class="works-grid" id="relatedWorksList">
+          <!-- JSで自動配置されます -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 全画面ライトボックスモーダル -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true">
+    <div class="lightbox-header">
+      <div class="lightbox-title-text" id="lightboxTitle">東京メトロ13000系 3画面ワイドLCD</div>
+      <button class="lightbox-close-btn" id="lightboxClose" aria-label="閉じる">✕ 閉じる (Esc)</button>
+    </div>
+    <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="前の作品">‹</button>
+    <div class="lightbox-content-box" id="lightboxTarget">
+      <!-- 拡大LCD描画エリア -->
+    </div>
+    <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="次の作品">›</button>
+    <div class="lightbox-instructions">
+      キーボード [←] [→] で前後の作品へ / [Esc] または余白クリックで閉じる
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-announcement">
+          <span class="footer-chime-icon">♪</span>
+          <span>まもなく、終点です。お忘れ物のないようご注意ください。</span>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">GALLERY</a>
+          <a href="../about.html">ABOUT</a>
+          <a href="../book.html">BOOK</a>
+          <a href="../links.html">LINKS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © まもうな (@Mamouna_inori) / Mamouna LCD Gallery
+        </div>
+        <div class="footer-sysinfo">
+          ALL LCD GRAPHICS REPRODUCED WITH MICROSOFT POWERPOINT
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/detail.js"></script>
+</body>
+</html>

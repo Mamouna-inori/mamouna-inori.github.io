@@ -1,1 +1,201 @@
-Hello world
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>まもうなのLCD再現ギャラリー | Mamouna LCD Gallery</title>
+  <meta name="description" content="PowerPointだけで本物の通勤電車車内LCD（トレインビジョン）を再現する図録ポートフォリオ。フォントの混在から実車同期ズレ、立体構内図まで徹底追求。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lcd.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- 固定ヘッダー -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+          <span class="logo-badge">LCD VIS</span>
+          <span>まもうなのLCD再現ギャラリー</span>
+          <span class="logo-title-en">Mamouna LCD Gallery</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">GALLERY</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="book.html">BOOK</a></li>
+          <li><a href="links.html">LINKS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 路線図ステータスバー (現在地: GALLERY) -->
+    <div class="line-status-bar">
+      <div class="line-status-inner">
+        <div class="line-track"></div>
+        <div class="station-nodes">
+          <div class="station-node current">
+            <span class="station-lamp"></span>
+            <span class="station-code">M01</span>
+            <span>GALLERY / 図録</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M02</span>
+            <span>ABOUT / まもうな</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M03</span>
+            <span>BOOK / 教科書</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M04</span>
+            <span>LINKS / 連絡先</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. 短いLCDヒーロー（画面高さ38%以内） -->
+    <section class="hero-lcd-section">
+      <div class="hero-lcd-board">
+        <!-- 上部ヘッダー -->
+        <div class="hero-lcd-header">
+          <div class="hero-meta-left">
+            <span class="hero-car-tag">号車 1</span>
+            <span class="hero-line-name">PowerPoint 線</span>
+          </div>
+          <div class="hero-clock" id="heroClock">12:34</div>
+        </div>
+
+        <!-- ヒーロー本体 -->
+        <div class="hero-lcd-body">
+          <div class="hero-type-badge">各駅停車</div>
+          <div class="hero-destination-box">
+            <div class="hero-destination">
+              <span class="blink-dest">ギャラリー</span>
+              <span class="hero-dest-for">ゆき for Gallery</span>
+            </div>
+            <p class="hero-catchphrase">パワポだけで、本物の車内案内表示をつくる。</p>
+          </div>
+          <div class="hero-ppt-seal">
+            <span class="seal-title">PRODUCED WITH</span>
+            <span class="seal-app">Microsoft PowerPoint</span>
+          </div>
+        </div>
+
+        <!-- 下部テロップ帯 -->
+        <div class="hero-telop-wrapper">
+          <div class="telop-tag">運行情報</div>
+          <div class="telop-track" id="telopTrack">
+            <!-- JSで動的に作品名テロップを挿入 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ツールバー（検索・駅種別幕フィルタ・並び替え） -->
+    <section class="gallery-toolbar">
+      <div class="toolbar-primary">
+        <!-- 検索 -->
+        <div class="search-box-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="形式・路線・メーカー・キーワードで検索..." autocomplete="off">
+        </div>
+
+        <!-- 並び替え & 件数表示 -->
+        <div class="sort-and-count">
+          <select id="sortSelect" class="sort-select" aria-label="並び替え">
+            <option value="newest">新しい順（制作年）</option>
+            <option value="line">路線順（五十音）</option>
+          </select>
+          <div class="items-counter">
+            <span id="worksCount">10</span> 件 表示中
+          </div>
+        </div>
+      </div>
+
+      <!-- 駅種別幕風フィルタ -->
+      <div class="filter-groups">
+        <!-- 媒体フィルタ -->
+        <div class="filter-row">
+          <span class="filter-label">媒体</span>
+          <div class="filter-chips">
+            <button class="rollsign-chip active" data-filter-group="type" data-filter-value="all">すべて</button>
+            <button class="rollsign-chip" data-filter-group="type" data-filter-value="still">静止画</button>
+            <button class="rollsign-chip" data-filter-group="type" data-filter-value="video">動画</button>
+            <button class="rollsign-chip" data-filter-group="type" data-filter-value="article">記事</button>
+            <button class="rollsign-chip" data-filter-group="type" data-filter-value="book">同人</button>
+          </div>
+        </div>
+
+        <!-- 路線フィルタ -->
+        <div class="filter-row">
+          <span class="filter-label">路線</span>
+          <div class="filter-chips">
+            <button class="rollsign-chip active" data-filter-group="line" data-filter-value="all">全路線</button>
+            <button class="rollsign-chip" data-filter-group="line" data-filter-value="JR">JR</button>
+            <button class="rollsign-chip" data-filter-group="line" data-filter-value="小田急">小田急</button>
+            <button class="rollsign-chip" data-filter-group="line" data-filter-value="東急">東急</button>
+            <button class="rollsign-chip" data-filter-group="line" data-filter-value="相鉄">相鉄</button>
+            <button class="rollsign-chip" data-filter-group="line" data-filter-value="メトロ">メトロ</button>
+          </div>
+        </div>
+
+        <!-- メーカーフィルタ -->
+        <div class="filter-row">
+          <span class="filter-label">メーカー</span>
+          <div class="filter-chips">
+            <button class="rollsign-chip active" data-filter-group="maker" data-filter-value="all">全メーカー</button>
+            <button class="rollsign-chip" data-filter-group="maker" data-filter-value="三菱">三菱</button>
+            <button class="rollsign-chip" data-filter-group="maker" data-filter-value="日立">日立</button>
+            <button class="rollsign-chip" data-filter-group="maker" data-filter-value="交通電業社">交通電業社</button>
+            <button class="rollsign-chip" data-filter-group="maker" data-filter-value="まもうな">自作/個人</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 作品グリッド -->
+    <section class="works-section">
+      <div class="works-grid" id="worksGrid">
+        <!-- JSで動的にLCDカードがレンダリングされます -->
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-announcement">
+          <span class="footer-chime-icon">♪</span>
+          <span>まもなく、終点です。お忘れ物のないようご注意ください。</span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">GALLERY</a>
+          <a href="about.html">ABOUT</a>
+          <a href="book.html">BOOK</a>
+          <a href="links.html">LINKS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © まもうな (@Mamouna_inori) / Mamouna LCD Gallery
+        </div>
+        <div class="footer-sysinfo">
+          ALL LCD GRAPHICS REPRODUCED WITH MICROSOFT POWERPOINT
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

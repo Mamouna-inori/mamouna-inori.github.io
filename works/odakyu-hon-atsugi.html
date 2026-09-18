@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小田急小田原線 急行 本厚木ゆき 車内放送＋LCD | まもうなのLCD再現ギャラリー</title>
+  <meta name="description" content="小田急特有の青白グラデーションと独特な駅ナンバリング表示。新宿発車から終点までの旅。">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/lcd.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-slug="odakyu-hon-atsugi">
+
+  <!-- 固定ヘッダー -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <a href="../index.html" style="display:flex; align-items:center; gap:10px;">
+          <span class="logo-badge">LCD VIS</span>
+          <span>まもうなのLCD再現ギャラリー</span>
+          <span class="logo-title-en">Mamouna LCD Gallery</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html" class="active">GALLERY</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+          <li><a href="../book.html">BOOK</a></li>
+          <li><a href="../links.html">LINKS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 路線図ステータスバー (現在地: GALLERY) -->
+    <div class="line-status-bar">
+      <div class="line-status-inner">
+        <div class="line-track"></div>
+        <div class="station-nodes">
+          <div class="station-node current">
+            <span class="station-lamp"></span>
+            <span class="station-code">M01</span>
+            <span>GALLERY / 図録</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M02</span>
+            <span>ABOUT / まもうな</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M03</span>
+            <span>BOOK / 教科書</span>
+          </div>
+          <div class="station-node">
+            <span class="station-lamp"></span>
+            <span class="station-code">M04</span>
+            <span>LINKS / 連絡先</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="work-detail-container">
+      <!-- ナビゲーションバー -->
+      <div class="detail-nav-bar">
+        <a href="../index.html" class="back-to-gallery-link">
+          <span>←</span> <span>ギャラリー一覧へ戻る</span>
+        </a>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-sub);">
+          ITEM NO: ODAKYU-HON-ATSUGI
+        </div>
+      </div>
+
+      <!-- 2カラムコンテンツ -->
+      <div class="detail-columns">
+        <!-- 左カラム: 大画面LCDビューア -->
+        <div class="viewer-column">
+          <div class="lcd-bezel main-lcd-display" id="mainLcdDisplay" title="クリックで全画面拡大">
+            <div class="zoom-hint">🔍 クリックで全画面拡大（Escで閉じる）</div>
+            <div class="lcd-screen-container" id="mainLcdScreen">
+              <!-- JSで高精細LCDベクターがレンダリングされます -->
+            </div>
+            <div class="lcd-bezel-footer">
+              <div class="lcd-pilot-lamp">
+                <span class="lamp-dot"></span>
+                <span>STATUS: TIMS ONLINE / ACTIVE</span>
+              </div>
+              <div class="lcd-plate">17インチ 16:9</div>
+            </div>
+          </div>
+
+          <div class="viewer-seal-bar">
+            <span>描画解像度: ベクターネイティブ</span>
+            <span class="ppt-guarantee-badge">★ PowerPointで再現</span>
+          </div>
+        </div>
+
+        <!-- 右カラム: スペックパネル（車内路線図・銘板風） -->
+        <div class="spec-column">
+          <div class="spec-board">
+            <div class="spec-board-header">
+              <h1 class="spec-train-title">小田急小田原線 急行 本厚木ゆき 車内放送＋LCD</h1>
+              <div class="spec-subtitle">新宿〜本厚木 全区間完全再現</div>
+            </div>
+
+            <!-- 本人記事に準拠した項目スペック表 -->
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <th>導入事業者</th>
+                  <td>小田急電鉄</td>
+                </tr>
+                <tr>
+                  <th>車両形式</th>
+                  <td>3000形 / 4000形</td>
+                </tr>
+                <tr>
+                  <th>導入路線</th>
+                  <td>小田急</td>
+                </tr>
+                <tr>
+                  <th>画面サイズ・比率</th>
+                  <td class="mono">17インチ 16:9</td>
+                </tr>
+                <tr>
+                  <th>表示制作メーカー</th>
+                  <td>小田急TV（三菱電機）</td>
+                </tr>
+                <tr>
+                  <th>アニメーション</th>
+                  <td>あり（全区間フルアニメーション走行）</td>
+                </tr>
+                <tr>
+                  <th>制作ソフトウェア</th>
+                  <td class="mono"><strong>Microsoft PowerPoint</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 本人のこだわり解説文 -->
+            <div class="spec-commentary">
+              <div class="commentary-label">Recreation Notes / 解説</div>
+              <p class="commentary-text">地元・小田急電鉄の急行本厚木ゆきを全区間フル尺で制作。小田急特有の澄んだスカイブルーグラデーション、代々木上原での千代田線乗り換え表示、登戸や町田での緩急接続案内など、沿線住民ならではの解像度で完璧に再現。YouTube公開中の大人気動画です。</p>
+            </div>
+
+            <!-- 外部リンクボタン -->
+            <div class="external-links-group">
+              <a href="https://www.youtube.com/watch?v=zcoL4yaIPhw" target="_blank" rel="noopener noreferrer" class="ext-link-btn btn-youtube"><span>YouTubeで動画を視聴する</span><span>▶</span></a>
+<a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" class="ext-link-btn btn-x"><span>X (Twitter) で投稿を見る</span><span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 関連作品 -->
+      <section class="related-works-section">
+        <div class="section-heading-bar">
+          <h2 class="section-heading-title">関連作品（同系路線・メーカー）</h2>
+        </div>
+        <div class="works-grid" id="relatedWorksList">
+          <!-- JSで自動配置されます -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 全画面ライトボックスモーダル -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true">
+    <div class="lightbox-header">
+      <div class="lightbox-title-text" id="lightboxTitle">小田急小田原線 急行 本厚木ゆき 車内放送＋LCD</div>
+      <button class="lightbox-close-btn" id="lightboxClose" aria-label="閉じる">✕ 閉じる (Esc)</button>
+    </div>
+    <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="前の作品">‹</button>
+    <div class="lightbox-content-box" id="lightboxTarget">
+      <!-- 拡大LCD描画エリア -->
+    </div>
+    <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="次の作品">›</button>
+    <div class="lightbox-instructions">
+      キーボード [←] [→] で前後の作品へ / [Esc] または余白クリックで閉じる
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-announcement">
+          <span class="footer-chime-icon">♪</span>
+          <span>まもなく、終点です。お忘れ物のないようご注意ください。</span>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">GALLERY</a>
+          <a href="../about.html">ABOUT</a>
+          <a href="../book.html">BOOK</a>
+          <a href="../links.html">LINKS</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © まもうな (@Mamouna_inori) / Mamouna LCD Gallery
+        </div>
+        <div class="footer-sysinfo">
+          ALL LCD GRAPHICS REPRODUCED WITH MICROSOFT POWERPOINT
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/detail.js"></script>
+</body>
+</html>
