@@ -1,72 +1,35 @@
-# まもうな ポートフォリオ (Mamouna Portfolio)
+# まもうな 個人サイト
 
-PowerPointだけで本物の通勤電車車内案内表示器（車内LCD / トレインビジョン）を再現するクリエイター「まもうな」のシンプル＆モダンなポートフォリオサイトです。
-
-AI生成特有の画一的なデザイン（派手なネオングラデーションや浮遊する図形など）を排し、すっきりとした清潔感のあるレイアウトで作品や最新動画を引き立てます。
+PowerPointで車内LCD（トレインビジョン）を再現するクリエイター「まもうな」の個人サイトです。
 
 ---
 
-## 主な機能
+## 構成
 
-- **YouTube 最新動画の自動取得・表示**:
-  - 公式YouTubeチャンネル（`@Mamouna_Inori` / チャンネルID: `UCF4ZQBIbNjgcmIQMsHVF3rA`）の最新動画を自動取得して表示。
-  - 最新動画のサムネイル、タイトル、投稿日時がリアルタイムに反映されます。
-  - 障害時やオフライン時でもサイトが壊れない実在動画フォールバック機構を内蔵。
-- **代表作品ギャラリー (Works)**:
-  - 16:9 比率のクリーンなカードレイアウト。
-  - シンプルなカテゴリ切替（`すべて` / `動画` / `静止画` / `記事・同人`）。
-  - クリックで手軽に詳細（車両形式、路線、制作ソフト、解説、各種リンク）を確認できる軽量モーダル。
-- **プロフィール & 同人誌**:
-  - 小田急線沿線の高校生・Freedom Train ライターとしての自己紹介。
-  - コミックマーケット既刊『PowerPointではじめる車内LCD再現』（C106/C108）の紹介。
-- **SNSリンク & 二次利用ガイドライン**:
-  - YouTube, X (Twitter), Instagram, Freedom Train, Mail へのリンク。
-  - 転載禁止やシミュレーター・音MADでの利用条件をシンプルに案内。
+- **プロフィール**: 自己紹介、SNSリンク（YouTube, X, Freedom Train, Mail）
+- **YouTube 最新動画**: 公式チャンネル（`@Mamouna_Inori`）から最新の動画を自動取得して表示
+- **記事一覧**: [Freedom Train 著者ページ](https://freedomtrain.jp/author/mamouna_owo/) の執筆記事一覧とサムネイルを表示
+- **同人誌**: 『PowerPointではじめる車内LCD再現』（C106 / C108）の紹介
+- **連絡先 & ガイドライン**: お問い合わせ先、二次利用のルール
 
 ---
 
-## 開発と実行方法
+## 開発と実行
 
-### ローカルプレビュー（Python）
-バニラHTML/CSS/JS（ES Modules）で記述されているため、Python標準のWebサーバーですぐに確認できます：
+静的HTML/CSS/JavaScriptで動作するため、Pythonの簡易サーバー等ですぐにプレビュー可能です：
 
 ```bash
-# サーバー起動
 py -m http.server 8000
-# または
-python -m http.server 8000
-
-# ブラウザでアクセス
-http://localhost:8000
 ```
 
-### GitHub Pages
-リポジトリルートに静的ファイルが配置されているため、GitHubにプッシュするだけでGitHub Pages（CNAME: `mamouna.net`）にて直ちに完全動作します。
+GitHub Pages（CNAME: `mamouna.net`）にてそのまま配信されます。
 
 ---
 
-## ファイル構成
+## 記事データの更新方法
 
+Freedom Trainで新しい記事を公開した際は、以下のスクリプトを実行することで `js/articles.js` が更新されます：
+
+```bash
+py scripts/extract_articles.py
 ```
-.
-├── index.html              # メインポートフォリオ（シングルページ）
-├── css/
-│   └── simple.css          # シンプル・洗練されたポートフォリオスタイル
-├── js/
-│   ├── youtube.js          # YouTube最新動画の自動取得モジュール
-│   ├── app.js              # ギャラリー描画・フィルタ・モーダル制御
-│   ├── works.js            # 作品データ定義
-│   └── lcd-generator.js    # 高精細LCDベクター生成器
-├── public/
-│   └── works/              # スクリーンショット画像配置ディレクトリ
-├── CNAME                   # mamouna.net
-└── README.md
-```
-
----
-
-## ライセンス / 著作権
-
-© まもうな (@Mamouna_inori) / Mamouna Portfolio  
-無断転載・再配布・類似動画への音声流用は原則禁止です。
-シミュレーター・音MAD等の非営利引用はクレジット「まもうな」明記で可能です。
