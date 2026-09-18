@@ -637,12 +637,12 @@ main {
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 640px) {
-  .site-nav ul {
-    gap: 12px;
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
   }
-  .site-nav a {
-    font-size: 0.78rem;
+  .header-inner {
+    padding: 0 16px;
   }
   main {
     padding: 24px 16px 60px;
