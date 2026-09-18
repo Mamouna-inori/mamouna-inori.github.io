@@ -120,14 +120,14 @@ export async function renderYouTubeSection(containerId) {
   if (!videos || videos.length === 0) return;
 
   container.innerHTML = videos.map(v => `
-    <article class="video-card">
-      <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="thumb-wrap" title="${v.title}">
-        <img src="${v.thumbnail}" alt="${v.title}" loading="lazy">
-        <div class="play-badge">▶</div>
+    <article class="movie-card">
+      <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="${v.title}">
+        <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title}" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/${v.id}/mqdefault.jpg'">
+        <div class="movie-play-overlay">▶</div>
       </a>
-      <div class="card-body">
-        <span class="card-date">${v.published}</span>
-        <h3 class="card-title">
+      <div class="movie-info">
+        <span class="movie-date">${v.published}</span>
+        <h3 class="movie-title">
           <a href="${v.url}" target="_blank" rel="noopener noreferrer">${v.title}</a>
         </h3>
       </div>

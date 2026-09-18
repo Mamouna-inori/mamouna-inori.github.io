@@ -3,128 +3,443 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>まもうな</title>
-  <meta name="description" content="まもうなの個人サイト。PowerPointでの車内LCD再現動画や、Freedom Trainでの執筆記事、同人誌などをまとめています。">
+  <title>まもうな OFFICIAL WEB SITE</title>
+  <meta name="description" content="まもうな(Mamouna)のオフィシャルウェブサイト。PowerPointでの車内LCD再現動画、Freedom Train執筆記事、最新情報、同人誌など。">
   <link rel="stylesheet" href="css/simple.css">
+  <!-- Twitter Widgets SDK -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
 
-  <!-- ヘッダー -->
+  <!-- ヘッダー (inoriminase.com style) -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-title">まもうな</a>
+      <a href="index.html" class="site-logo">
+        <span class="site-logo-main">MAMOUNA</span>
+        <span class="site-logo-sub">OFFICIAL WEB SITE</span>
+      </a>
       <nav class="site-nav">
-        <ul class="nav-list">
-          <li><a href="#youtube" class="nav-link">YouTube</a></li>
-          <li><a href="#articles" class="nav-link">記事</a></li>
-          <li><a href="#book" class="nav-link">同人誌</a></li>
-          <li><a href="#contact" class="nav-link">連絡先</a></li>
+        <ul>
+          <li><a href="#profile">PROFILE</a></li>
+          <li><a href="#movie">MOVIE</a></li>
+          <li><a href="#articles">ARTICLES</a></li>
+          <li><a href="#sns">SNS</a></li>
+          <li><a href="#book">BOOK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- プロフィール -->
-    <section class="profile-card">
-      <div class="profile-header">
-        <h1 class="profile-name">まもうな</h1>
-        <span class="profile-handle">@Mamouna_inori</span>
+    <!-- PROFILE セクション -->
+    <section class="profile-card" id="profile">
+      <div class="profile-top">
+        <div>
+          <h1 class="profile-name">まもうな</h1>
+          <span class="profile-handle">@Mamouna_inori / Mamouna</span>
+        </div>
       </div>
 
-      <p class="profile-bio">
-        Microsoft PowerPointで通勤電車の車内案内表示器（LCD / トレインビジョン）を再現しています。小田急線沿線。鉄道ブログ「Freedom Train」で記事を書いています。旅客案内表示、水瀬いのり、小田急が好きです。
+      <p class="profile-desc">
+        Microsoft PowerPointで通勤電車の車内案内表示器（LCD / トレインビジョン）を再現しています。小田急線沿線。鉄道ブログメディア「Freedom Train」ライター。旅客案内表示、水瀬いのり、小田急電鉄が好きです。
       </p>
 
-      <div class="profile-links">
-        <a href="https://www.youtube.com/@Mamouna_Inori" target="_blank" rel="noopener noreferrer" class="link-button">
-          <span style="color: var(--color-youtube);">▶</span>
-          <span>YouTube</span>
+      <div class="profile-sns-buttons">
+        <a href="https://www.youtube.com/@Mamouna_Inori" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-youtube);">
+          <span>▶</span> <span>YouTube</span>
         </a>
-        <a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" class="link-button">
-          <span>𝕏</span>
-          <span>Twitter / X</span>
+        <a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" class="sns-link-btn">
+          <span>𝕏</span> <span>Official X</span>
         </a>
-        <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer" class="link-button">
-          <span>📝</span>
-          <span>Freedom Train</span>
+        <a href="https://www.instagram.com/mamouna.inori/" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-instagram);">
+          <span>📷</span> <span>Instagram</span>
         </a>
-        <a href="mailto:mamouna.inori@outlook.jp" class="link-button">
-          <span>✉</span>
-          <span>メール</span>
+        <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-brand-accent);">
+          <span>📝</span> <span>Freedom Train</span>
+        </a>
+        <a href="mailto:mamouna.inori@outlook.jp" class="sns-link-btn">
+          <span>✉</span> <span>Mail</span>
         </a>
       </div>
     </section>
 
-    <!-- YouTube 最新動画 -->
-    <section class="section" id="youtube">
-      <div class="section-header">
-        <h2 class="section-title">YouTube 最新動画</h2>
-        <a href="https://www.youtube.com/@Mamouna_Inori" target="_blank" rel="noopener noreferrer" class="section-more-link">
-          チャンネルを見る →
-        </a>
+    <!-- MOVIE (YouTube 最新動画：PC横3列) -->
+    <section class="section" id="movie">
+      <div class="section-title-wrap">
+        <h2 class="section-title-en">MOVIE</h2>
+        <span class="section-title-jp">YouTube 最新動画</span>
       </div>
 
-      <div class="media-grid" id="youtubeGrid"></div>
-    </section>
+      <!-- PCなら確実に横3列 (movie-grid) -->
+      <div class="movie-grid" id="movieGrid">
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=fY1LlkKLDvU" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="小田急線 各駅停車 成城学園前ゆき 全区間車内放送＋LCD再現">
+            <img src="https://i.ytimg.com/vi/fY1LlkKLDvU/hqdefault.jpg" alt="小田急線 各駅停車 成城学園前ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2026.09.18</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=fY1LlkKLDvU" target="_blank" rel="noopener noreferrer">【LCD再現・更新】小田急線 各駅停車 成城学園前ゆき 全区間車内放送＋LCD再現</a>
+            </h3>
+          </div>
+        </article>
 
-    <!-- 記事一覧 (Freedom Train) -->
-    <section class="section" id="articles">
-      <div class="section-header">
-        <h2 class="section-title">記事一覧</h2>
-        <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer" class="section-more-link">
-          Freedom Train 著者ページ →
-        </a>
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=IbcvxRTiyA4" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="相鉄線 快速 横浜ゆき 全区間車内放送＋LCD再現">
+            <img src="https://i.ytimg.com/vi/IbcvxRTiyA4/hqdefault.jpg" alt="相鉄線 快速 横浜ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2026.08.31</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=IbcvxRTiyA4" target="_blank" rel="noopener noreferrer">【高音質】相鉄線 快速 横浜ゆき 全区間車内放送＋LCD再現</a>
+            </h3>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=e-bu9EcsCgY" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="小田急線 快速急行 新宿ゆき 全区間車内放送＋LCD同期ズレ再現">
+            <img src="https://i.ytimg.com/vi/e-bu9EcsCgY/hqdefault.jpg" alt="小田急線 快速急行 新宿ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2026.07.20</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=e-bu9EcsCgY" target="_blank" rel="noopener noreferrer">【実車同期】小田急線 快速急行 新宿ゆき 全区間車内放送＋LCD同期ズレ再現</a>
+            </h3>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=Hs6AryFPiAU" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="東急東横線 急行 元町・中華街ゆき 全区間放送＋LCD再現">
+            <img src="https://i.ytimg.com/vi/Hs6AryFPiAU/hqdefault.jpg" alt="東急東横線 急行 元町・中華街ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2026.07.15</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=Hs6AryFPiAU" target="_blank" rel="noopener noreferrer">【動画】東急東横線 急行 元町・中華街ゆき 全区間放送＋LCD再現</a>
+            </h3>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=zcoL4yaIPhw" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="小田急小田原線 急行 本厚木ゆき 車内放送＋LCD再現">
+            <img src="https://i.ytimg.com/vi/zcoL4yaIPhw/hqdefault.jpg" alt="小田急小田原線 急行 本厚木ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2025.10.12</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=zcoL4yaIPhw" target="_blank" rel="noopener noreferrer">小田急小田原線 急行 本厚木ゆき 車内放送＋LCD再現（新宿〜本厚木）</a>
+            </h3>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <a href="https://www.youtube.com/watch?v=Dg4TMuqxXNw" target="_blank" rel="noopener noreferrer" class="movie-thumb-wrap" title="相鉄・JR直通線 各駅停車 新宿ゆき 車内放送＋LCD再現">
+            <img src="https://i.ytimg.com/vi/Dg4TMuqxXNw/hqdefault.jpg" alt="相鉄・JR直通線 各駅停車 新宿ゆき" loading="lazy">
+            <div class="movie-play-overlay">▶</div>
+          </a>
+          <div class="movie-info">
+            <span class="movie-date">2025.05.29</span>
+            <h3 class="movie-title">
+              <a href="https://www.youtube.com/watch?v=Dg4TMuqxXNw" target="_blank" rel="noopener noreferrer">【全区間再現】相鉄・JR直通線 各駅停車 新宿ゆき 海老名→新宿 車内放送＋LCD再現</a>
+            </h3>
+          </div>
+        </article>
       </div>
 
-      <div class="media-grid" id="articlesGrid"></div>
-
-      <div class="section-footer-link">
-        <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer">
-          <span>Freedom Train で過去の記事一覧を見る</span>
+      <div class="section-action-center">
+        <a href="https://www.youtube.com/@Mamouna_Inori" target="_blank" rel="noopener noreferrer" class="view-all-btn">
+          <span>VIEW ALL ON YOUTUBE</span>
           <span>→</span>
         </a>
       </div>
     </section>
 
-    <!-- 同人誌 -->
-    <section class="section" id="book">
-      <div class="section-header">
-        <h2 class="section-title">同人誌</h2>
+    <!-- ARTICLES (Freedom Train 記事一覧：適正サムネ幅＆静的100%描画) -->
+    <section class="section" id="articles">
+      <div class="section-title-wrap">
+        <h2 class="section-title-en">ARTICLES</h2>
+        <span class="section-title-jp">Freedom Train 執筆記事</span>
       </div>
 
-      <div class="book-card">
-        <h3 class="book-title">『PowerPointではじめる車内LCD再現』</h3>
-        <p class="book-desc">
-          コミックマーケット C106 / C108 頒布作品（B5判 フルカラー）。<br>
-          PowerPointの標準機能だけで車内LCD（トレインビジョン）を描くための解説本。キャンバス比率の設定から、フォントの選び方、図形結合を用いた立体駅構内図の作画、コンマ秒単位のアニメーション同期調整などをまとめています。
-        </p>
-        <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
-          ※ 書店委託や次回頒布についてはXアカウント等でお知らせします。
+      <div class="articles-container">
+        <!-- 記事 1 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/53542/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/cocoon-featured-images/featured-image-53542-b23a00969fb91dbd061cafc807b863b4-320x180.png" alt="AIだと決めてかかる前に、まずできるチェックをしないか" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.05.12</span>
+              <span class="article-cat-tag">雑記</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/53542/" target="_blank" rel="noopener noreferrer">AIだと決めてかかる前に、まずできるチェックをしないか</a>
+            </h3>
+            <p class="article-snippet-text">はじめにこんにちは、まもうなGPTです。最近、生成AI、特に画像生成分野におけるAIの進化には目を見張るものがあります。ChatGPTやGoogle Geminiの画像生成機能に関しては、現実と遜色ないものを出してくるなど、目覚ましい進歩を...</p>
+          </div>
+        </article>
+
+        <!-- 記事 2 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/51792/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2026/04/image-1-320x180.jpg" alt="東京メトロ13000系のLCDを見る。" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.04.03</span>
+              <span class="article-cat-tag">東京メトロ</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/51792/" target="_blank" rel="noopener noreferrer">東京メトロ13000系のLCDを見る。</a>
+            </h3>
+            <p class="article-snippet-text">特記のない限り、情報はすべて記事公開地点のものです。はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうなです。さて、「まもうなのLCD再現ギャラリー」の第4回として、東京メトロ13000系のLCD(...</p>
+          </div>
+        </article>
+
+        <!-- 記事 3 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/51296/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2026/03/image-3-640x360.jpg" alt="E235系1000番台のLCDを見る。" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.03.26</span>
+              <span class="article-cat-tag">内房線</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/51296/" target="_blank" rel="noopener noreferrer">E235系1000番台のLCDを見る。</a>
+            </h3>
+            <p class="article-snippet-text">特記のない限り、情報はすべて記事公開地点のものです。はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうなです。さて、「まもうなのLCD再現ギャラリー」の第3回として、E235系1000番台のLCD(...</p>
+          </div>
+        </article>
+
+        <!-- 記事 4 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/48334/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2026/02/image-6-640x360.png" alt="E233系7000番台のLCDを見る。" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.02.27</span>
+              <span class="article-cat-tag">埼京・川越線・りんかい線直通</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/48334/" target="_blank" rel="noopener noreferrer">E233系7000番台のLCDを見る。</a>
+            </h3>
+            <p class="article-snippet-text">特記のない限り、情報はすべて記事公開地点のものです。はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうなです。さて、「まもうなのLCD再現ギャラリー」の第2回として、E233系7000番台のLCD(...</p>
+          </div>
+        </article>
+
+        <!-- 記事 5 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/48152/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2026/02/image-3-640x360.png" alt="【フォント沼】E233系2000番台 マト7編成の「新」LCDを見る。" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.02.21</span>
+              <span class="article-cat-tag">常磐線各駅停車</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/48152/" target="_blank" rel="noopener noreferrer">【フォント沼】E233系2000番台 マト7編成の「新」LCDを見る。</a>
+            </h3>
+            <p class="article-snippet-text">特記のない限り、情報はすべて記事公開地点のものです。はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうなです。今回からは、私のX(旧Twitter)との連動記事として、パワポで再現したLCD画像の補...</p>
+          </div>
+        </article>
+
+        <!-- 記事 6 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/32779/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2025/06/image-4-1-640x360.jpg" alt="【世界初のフルSiC】小田急千代田車両図鑑#2 小田急1000形(リニューアル車)" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2026.01.02</span>
+              <span class="article-cat-tag">小田急多摩線</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/32779/" target="_blank" rel="noopener noreferrer">【世界初のフルSiC】小田急千代田車両図鑑#2 小田急1000形(リニューアル車)</a>
+            </h3>
+            <p class="article-snippet-text">はしがき新宿を起点に、箱根の玄関口である小田原までを結ぶ「小田原線」、湘南エリアに至る「江ノ島線」、多摩ニュータウンに至る「多摩線」の3路線を擁する小田急電鉄。そして、そんな小田急電鉄と相互直通運転を行う東京メトロ千代田線とJR常磐緩行線。...</p>
+          </div>
+        </article>
+
+        <!-- 記事 7 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/44261/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2025/12/image-640x360.jpg" alt="【東急】「謎」のLCDの正体が判明！話題の「彩Vision」を徹底解剖" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2025.12.05</span>
+              <span class="article-cat-tag">東急電鉄・横浜高速鉄道</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/44261/" target="_blank" rel="noopener noreferrer">【東急】「謎」のLCDの正体が判明！話題の「彩Vision」を徹底解剖</a>
+            </h3>
+            <p class="article-snippet-text">はしがきこんにちは。墓標は横アリに立ててきました。未来まで語り継がれる神話、できたね。まもうなです。今回は、久しぶりにLCDに関するおはなし。2025年7月某日、東急池上線・多摩川線を走る7000系の7101FにセサミクロでないLCDが登場...</p>
+          </div>
+        </article>
+
+        <!-- 記事 8 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/40953/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2025/10/image-640x360.png" alt="【30年ぶりの新型車両】りんかい線71-000形　ファーストインプレッション" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2025.10.02</span>
+              <span class="article-cat-tag">埼京・川越線・りんかい線直通</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/40953/" target="_blank" rel="noopener noreferrer">【30年ぶりの新型車両】りんかい線71-000形　ファーストインプレッション</a>
+            </h3>
+            <p class="article-snippet-text">イラスト：Azusa　撮影日：2025年10月1日2025年10月1日。前日の9月30日に開業40周年を迎えた埼京線系統に、「新顔」が加わった―。はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうな...</p>
+          </div>
+        </article>
+
+        <!-- 記事 9 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/38253/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2025/08/image-7-1-640x360.jpg" alt="【考察】なぜ小田急江ノ島線の快速急行は運休するのか" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2025.09.12</span>
+              <span class="article-cat-tag">小田急江ノ島線</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/38253/" target="_blank" rel="noopener noreferrer">【考察】なぜ小田急江ノ島線の快速急行は運休するのか</a>
+            </h3>
+            <p class="article-snippet-text">※本記事で述べている考察は、あくまで筆者自身の見解であり、所属している組織の見解、また小田急電鉄の公式見解ではありません。ご留意ください。本記事の内容に関して小田急電鉄等関係各所に直接問い合わせることはご遠慮ください。はしがきこんにちは。好...</p>
+          </div>
+        </article>
+
+        <!-- 記事 10 -->
+        <article class="article-item">
+          <a href="https://freedomtrain.jp/mamouna_owo/37937/" target="_blank" rel="noopener noreferrer" class="article-thumb-box">
+            <img src="https://freedomtrain.jp/wp-content/uploads/2025/08/image-1-3-640x360.jpg" alt="【検証】東急・JR・相鉄　3つの「横浜駅」は改札を出ず移動できるか" loading="lazy">
+          </a>
+          <div class="article-content">
+            <div class="article-header-meta">
+              <span class="article-date">2025.09.05</span>
+              <span class="article-cat-tag">相鉄・JR直通線</span>
+            </div>
+            <h3 class="article-title-text">
+              <a href="https://freedomtrain.jp/mamouna_owo/37937/" target="_blank" rel="noopener noreferrer">【検証】東急・JR・相鉄　3つの「横浜駅」は改札を出ず移動できるか</a>
+            </h3>
+            <p class="article-snippet-text">【撮影日】2025年8月31日はしがきこんにちは。好きな四字熟語は「燈籠光柱」と「廃材芸術スクラップアート」。どうもまもうなです。今回の記事は、無駄に時間をかけて短い距離を移動するおはなし。前置き長くしても仕方がないので、本編に行きましょう...</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-action-center">
+        <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer" class="view-all-btn">
+          <span>FREEDOM TRAIN 著者ページへ</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- OFFICIAL SNS (X & Instagram 埋め込み) -->
+    <section class="section" id="sns">
+      <div class="section-title-wrap">
+        <h2 class="section-title-en">OFFICIAL SNS</h2>
+        <span class="section-title-jp">公式SNSアカウント</span>
+      </div>
+
+      <div class="sns-embed-grid">
+        <!-- Twitter (X) タイムライン埋め込み -->
+        <div class="sns-embed-card">
+          <div class="sns-card-header">
+            <div class="sns-card-title">
+              <span>𝕏</span>
+              <span>Twitter / X</span>
+            </div>
+            <a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" class="sns-card-btn">
+              @Mamouna_inori
+            </a>
+          </div>
+          <div class="twitter-timeline-container">
+            <a class="twitter-timeline" data-height="450" data-theme="light" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/Mamouna_inori?ref_src=twsrc%5Etfw">
+              Tweets by @Mamouna_inori
+            </a>
+          </div>
+        </div>
+
+        <!-- Instagram 埋め込み・プロフィールカード -->
+        <div class="sns-embed-card">
+          <div class="sns-card-header">
+            <div class="sns-card-title">
+              <span style="color: var(--color-instagram);">📷</span>
+              <span>Instagram</span>
+            </div>
+            <a href="https://www.instagram.com/mamouna.inori/" target="_blank" rel="noopener noreferrer" class="sns-card-btn">
+              @mamouna.inori
+            </a>
+          </div>
+          <div class="instagram-box-container">
+            <div class="instagram-avatar">📷</div>
+            <div class="instagram-username">@mamouna.inori</div>
+            <div class="instagram-meta">まもうな Instagram Official</div>
+            <p style="font-size: 0.88rem; color: var(--color-text-sub); max-width: 280px; margin-bottom: 20px;">
+              日常の写真や鉄道スナップ、制作風景などを気ままに投稿しています。
+            </p>
+            <a href="https://www.instagram.com/mamouna.inori/" target="_blank" rel="noopener noreferrer" class="view-all-btn" style="color: var(--color-instagram); border-color: var(--color-instagram);">
+              <span>VIEW ON INSTAGRAM</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 連絡先 & 二次利用について -->
-    <section class="section" id="contact">
-      <div class="section-header">
-        <h2 class="section-title">連絡先・二次利用について</h2>
+    <!-- BOOK (同人誌) -->
+    <section class="section" id="book">
+      <div class="section-title-wrap">
+        <h2 class="section-title-en">BOOK</h2>
+        <span class="section-title-jp">技術同人誌</span>
       </div>
 
-      <div class="info-card">
+      <div class="clean-card">
+        <h3 class="book-title-heading">『PowerPointではじめる車内LCD再現』</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-sub); line-height: 1.75; margin-bottom: 12px;">
+          コミックマーケット C106 / C108 頒布作品（B5判 フルカラー）。<br>
+          PowerPointの標準機能だけで車内LCD（トレインビジョン）を描くための解説本。キャンバス比率の設定から、フォントの選び方、図形結合を用いた立体駅構内図の作画、コンマ秒単位のアニメーション同期調整などをまとめています。
+        </p>
+        <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+          ※ 書店委託や次回頒布情報については公式Xアカウント（@Mamouna_inori）にて順次お知らせいたします。
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (連絡先 & ガイドライン) -->
+    <section class="section" id="contact">
+      <div class="section-title-wrap">
+        <h2 class="section-title-en">CONTACT & GUIDELINES</h2>
+        <span class="section-title-jp">連絡先とお問い合わせ</span>
+      </div>
+
+      <div class="clean-card" style="display: flex; flex-direction: column; gap: 20px;">
         <div>
-          <strong style="color: var(--color-text-main);">お問い合わせ</strong>
-          <p style="margin-top: 4px;">
-            メール（<a href="mailto:mamouna.inori@outlook.jp" style="color: var(--color-primary);">mamouna.inori@outlook.jp</a>）または X（<a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">@Mamouna_inori</a>）のDMまでお願いします。
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-brand-blue); margin-bottom: 6px;">お問い合わせ窓口</h3>
+          <p style="font-size: 0.92rem; color: var(--color-text-sub);">
+            ご意見・ご感想、各種ご相談はメール（<a href="mailto:mamouna.inori@outlook.jp" style="color: var(--color-brand-accent); font-weight: bold;">mamouna.inori@outlook.jp</a>）または X（<a href="https://x.com/Mamouna_inori" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand-accent); font-weight: bold;">@Mamouna_inori</a>）のダイレクトメッセージまでお願いいたします。
           </p>
         </div>
 
-        <div style="border-top: 1px solid #F1F5F9; padding-top: 12px;">
-          <strong style="color: var(--color-text-main);">二次利用のガイドライン</strong>
-          <ul class="info-list" style="margin-top: 6px;">
-            <li>・画像・音声の無断転載や自作発言は禁止です。</li>
-            <li>・他の類似車内LCD再現動画への音声流用はご遠慮ください。</li>
-            <li>・シミュレーターや音MAD等での引用は、クレジット「まもうな」を明記していただければ利用可能です。</li>
+        <div style="border-top: 1px solid var(--color-border-light); padding-top: 16px;">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-brand-blue); margin-bottom: 8px;">二次利用についてのガイドライン</h3>
+          <ul class="guidelines-list">
+            <li>・画像・音声の無断転載および自作発言は禁止です。</li>
+            <li>・他の類似車内LCD再現動画への当チャンネル音声の流用はご遠慮ください。</li>
+            <li>・シミュレーターや音MAD等の非営利作品での引用利用は、クレジット「<strong>まもうな</strong>」を明記していただければ歓迎いたします。</li>
           </ul>
         </div>
       </div>
@@ -133,7 +448,7 @@
 
   <!-- フッター -->
   <footer class="site-footer">
-    <div>© まもうな (@Mamouna_inori)</div>
+    <div>© まもうな (@Mamouna_inori) / MAMOUNA OFFICIAL WEB SITE</div>
   </footer>
 
   <script type="module" src="js/app.js"></script>
