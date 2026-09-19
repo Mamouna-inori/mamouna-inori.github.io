@@ -280,6 +280,68 @@ main {
   border-color: var(--color-brand-accent);
 }
 
+/* 読み込み中スケルトンカード */
+.movie-card-skeleton {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+.skeleton-info {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+.skeleton-line.date {
+  width: 35%;
+}
+
+.skeleton-line.title {
+  width: 85%;
+  height: 16px;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.movie-error-box {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 36px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-sub);
+  font-size: 0.92rem;
+}
+
 .movie-thumb-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
