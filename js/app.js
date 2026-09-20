@@ -52,8 +52,15 @@ function initKVSlider() {
     dots.forEach((dot, i) => {
       if (i === index) {
         dot.classList.add("active");
-        if (typeof dot.scrollIntoView === "function") {
-          dot.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        if (indicatorsContainer) {
+          // ページ全体のスクロールを起こさず、ドットコンテナ内だけを横スクロールさせる
+          const containerWidth = indicatorsContainer.clientWidth;
+          const dotLeft = dot.offsetLeft;
+          const dotWidth = dot.clientWidth;
+          indicatorsContainer.scrollTo({
+            left: dotLeft - containerWidth / 2 + dotWidth / 2,
+            behavior: "smooth"
+          });
         }
       } else {
         dot.classList.remove("active");
