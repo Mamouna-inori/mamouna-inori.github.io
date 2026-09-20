@@ -169,6 +169,131 @@ main {
 }
 
 /* ==========================================================================
+   KEY VISUAL スライドショー (inoriminase.com style)
+   ========================================================================== */
+
+.kv-slider-section {
+  margin-bottom: 40px;
+}
+
+.kv-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #0F172A;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(27, 54, 93, 0.08);
+}
+
+.kv-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.kv-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.kv-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.kv-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* スライダー操作矢印 */
+.kv-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(229, 233, 240, 0.8);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.kv-arrow:hover {
+  opacity: 1;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.kv-prev {
+  left: 16px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+.kv-next {
+  right: 16px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+/* インジケーター (ドット) */
+.kv-indicators {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  max-width: 90%;
+  overflow-x: auto;
+}
+
+.kv-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.kv-dot.active {
+  width: 20px;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+/* ==========================================================================
    PROFILE セクション
    ========================================================================== */
 
@@ -188,6 +313,21 @@ main {
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 16px;
+}
+
+.profile-top-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .profile-name {
@@ -210,6 +350,38 @@ main {
   line-height: 1.8;
   max-width: 800px;
   margin-bottom: 24px;
+}
+
+/* プロフィール詳細スペック表 */
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #F8FAFC;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-light);
+}
+
+.profile-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-detail-label {
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-brand-accent);
+}
+
+.profile-detail-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-main);
 }
 
 .profile-sns-buttons {
@@ -707,12 +879,46 @@ main {
     padding: 0 16px;
   }
   main {
-    padding: 24px 16px 60px;
+    padding: 16px 14px 60px;
+  }
+  .kv-slider-section {
+    margin-bottom: 24px;
+  }
+  .kv-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+  .kv-prev {
+    left: 8px;
+  }
+  .kv-next {
+    right: 8px;
+  }
+  .kv-indicators {
+    bottom: 8px;
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  .kv-dot {
+    width: 5px;
+    height: 5px;
+  }
+  .kv-dot.active {
+    width: 14px;
   }
   .profile-card {
     padding: 24px 18px;
   }
+  .profile-avatar {
+    width: 52px;
+    height: 52px;
+  }
   .profile-name {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+  }
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }

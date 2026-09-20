@@ -6,6 +6,9 @@
   <title>まもうな OFFICIAL WEB SITE</title>
   <meta name="description" content="まもうな(Mamouna)のオフィシャルウェブサイト。PowerPointでの車内LCD再現動画、Freedom Train執筆記事、最新情報、同人誌など。">
   <link rel="stylesheet" href="css/simple.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <!-- Twitter Widgets SDK -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
@@ -32,18 +35,72 @@
   </header>
 
   <main>
+    <!-- KEY VISUAL スライドショー (inoriminase.com style) -->
+    <section class="kv-slider-section" aria-label="Key Visual Slider">
+      <div class="kv-slider" id="kvSlider">
+        <div class="kv-track" id="kvTrack">
+          <div class="kv-slide active"><img src="images/HEQmTbKa0AAENxa.jpg" alt="車内LCD再現作品" loading="eager"></div>
+          <div class="kv-slide"><img src="images/G-EUv0pa8AELtXg.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/G9VMKzfaEAAwkVx.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/GoaQaSZWcAACcNE.png" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HE8iNOzbgAAn_px.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HHYyiHkbgAAaMQ8.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HETicQZbYAECWjg.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HNZE7P0bkAApe5h.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HA9T71ZbsAY1XmU.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/G9ggO1PbkAEYk3y.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HBVPIotaYAA-Wv5.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HCD-95faMAEosKP.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HCZPFb7aAAAoyiu.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HDwauULbQAAS7pm.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HPCfJ6saoAA504F.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HSBHu_rbUAAI_5o.png" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HD-xokmaIAEwzj1.png" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HDrB0_vbMAAVvhK.png" alt="車内LCD再現作品" loading="lazy"></div>
+          <div class="kv-slide"><img src="images/HED4roKaAAAAOjO.jpg" alt="車内LCD再現作品" loading="lazy"></div>
+        </div>
+        <!-- コントロール（矢印 & インジケーター） -->
+        <button class="kv-arrow kv-prev" id="kvPrev" aria-label="前の画像">‹</button>
+        <button class="kv-arrow kv-next" id="kvNext" aria-label="次の画像">›</button>
+        <div class="kv-indicators" id="kvIndicators"></div>
+      </div>
+    </section>
+
     <!-- PROFILE セクション -->
     <section class="profile-card" id="profile">
       <div class="profile-top">
-        <div>
-          <h1 class="profile-name">まもうな</h1>
-          <span class="profile-handle">@Mamouna_inori / Mamouna</span>
+        <div class="profile-top-inner">
+          <img src="icon.png" alt="まもうな アイコン" class="profile-avatar">
+          <div>
+            <h1 class="profile-name">まもうな 🍀</h1>
+            <span class="profile-handle">@Mamouna_inori / Mamouna</span>
+          </div>
         </div>
       </div>
 
       <p class="profile-desc">
-        Microsoft PowerPointで通勤電車の車内案内表示器（LCD / トレインビジョン）を再現しています。小田急線沿線。鉄道ブログメディア「Freedom Train」ライター。旅客案内表示、水瀬いのり、小田急電鉄が好きです。
+        小田急線沿線在住。Microsoft PowerPointを駆使して通勤電車の車内案内表示器（LCD / トレインビジョン）を限界まで精密に再現しています。鉄道ブログメディア「Freedom Train」ライターとしても活動中。好きなものは車内旅客案内表示（セサミクロ等）、水瀬いのりさん、小田急電鉄。
       </p>
+
+      <!-- プロフィール詳細スペック -->
+      <div class="profile-details-grid">
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">BIRTHDAY</span>
+          <span class="profile-detail-value">01.07</span>
+        </div>
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">LOCATION</span>
+          <span class="profile-detail-value">小田急線沿線</span>
+        </div>
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">HOBBY</span>
+          <span class="profile-detail-value">LCD再現 / 声優 (水瀬いのり)</span>
+        </div>
+        <div class="profile-detail-item">
+          <span class="profile-detail-label">FAVORITE</span>
+          <span class="profile-detail-value">セサミクロ / 旅客案内表示全般</span>
+        </div>
+      </div>
 
       <div class="profile-sns-buttons">
         <a href="https://www.youtube.com/@Mamouna_Inori" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-youtube);">
@@ -57,6 +114,9 @@
         </a>
         <a href="https://freedomtrain.jp/author/mamouna_owo/" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-brand-accent);">
           <span>📝</span> <span>Freedom Train</span>
+        </a>
+        <a href="https://freedomtrain.jp/mamouna_owo/517/" target="_blank" rel="noopener noreferrer" class="sns-link-btn" style="color: var(--color-text-sub);">
+          <span>📖</span> <span>プロフィール記事</span>
         </a>
         <a href="mailto:mamouna.inori@outlook.jp" class="sns-link-btn">
           <span>✉</span> <span>Mail</span>
@@ -402,9 +462,10 @@
         <div style="border-top: 1px solid var(--color-border-light); padding-top: 16px;">
           <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-brand-blue); margin-bottom: 8px;">二次利用についてのガイドライン</h3>
           <ul class="guidelines-list">
-            <li>・画像・音声の無断転載および自作発言は禁止です。</li>
-            <li>・他の類似車内LCD再現動画への当チャンネル音声の流用はご遠慮ください。</li>
-            <li>・シミュレーターや音MAD等の非営利作品での引用利用は、クレジット「<strong>まもうな</strong>」を明記していただければ歓迎いたします。</li>
+            <li>・<strong>動画そのものの転載：</strong>一切禁止とさせていただきます。</li>
+            <li>・<strong>動画に含まれる音声の利用：</strong>当動画と趣旨が被るLCD再現等での音声流用・公開は禁止です。</li>
+            <li>・<strong>シミュレーター・音MAD等への利用：</strong>BVE等のシミュレーターや音MADなどの非営利作品への利用はご自由にどうぞ（クレジット「まもうな」を明記、一言お声がけいただけますと幸いです）。</li>
+            <li>・<strong>企業・団体様からのお問い合わせ：</strong>上記メールアドレス（mamouna.inori@outlook.jp）まで直接ご連絡をお願いいたします。</li>
           </ul>
         </div>
       </div>
